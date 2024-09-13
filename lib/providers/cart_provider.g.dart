@@ -20,12 +20,12 @@ final cardTotalProvider = AutoDisposeProvider<int>.internal(
 );
 
 typedef CardTotalRef = AutoDisposeProviderRef<int>;
-String _$cartNotifierHash() => r'9e0ce989ed5af28b82a06789fc93d2da7e3aeb9d';
+String _$cartNotifierHash() => r'2e8409df84ffbf349a841425ce60fe06f5ee4275';
 
 /// See also [CartNotifier].
 @ProviderFor(CartNotifier)
 final cartNotifierProvider =
-    AutoDisposeNotifierProvider<CartNotifier, Set<Product>>.internal(
+    AutoDisposeNotifierProvider<CartNotifier, List<Product>>.internal(
   CartNotifier.new,
   name: r'cartNotifierProvider',
   debugGetCreateSourceHash:
@@ -34,6 +34,6 @@ final cartNotifierProvider =
   allTransitiveDependencies: null,
 );
 
-typedef _$CartNotifier = AutoDisposeNotifier<Set<Product>>;
+typedef _$CartNotifier = AutoDisposeNotifier<List<Product>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

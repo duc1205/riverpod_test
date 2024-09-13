@@ -17,6 +17,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     final allProducts = ref.watch(productsProvider);
     final cartProducts = ref.watch(cartNotifierProvider);
 
+    print("all:  $allProducts");
+
+    print("cart: $cartProducts");
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home'),
@@ -46,14 +50,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   if (cartProducts.contains(allProducts[index]))
                     TextButton(
                       onPressed: () {
-                        ref.read(cartNotifierProvider.notifier).removeProduct(allProducts[index]);
+                        ref.watch(cartNotifierProvider.notifier).removeProduct(allProducts[index]);
                       },
                       child: const Text('Remove'),
                     ),
                   if (!cartProducts.contains(allProducts[index]))
                     TextButton(
                       onPressed: () {
-                        ref.read(cartNotifierProvider.notifier).addProduct(allProducts[index]);
+                        ref.watch(cartNotifierProvider.notifier).addProduct(allProducts[index]);
                       },
                       child: const Text('Add to Cart'),
                     ),
