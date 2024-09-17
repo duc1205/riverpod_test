@@ -17,10 +17,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     final allProducts = ref.watch(productsProvider);
     final cartProducts = ref.watch(cartNotifierProvider).value ?? [];
 
-    print("all:  $allProducts");
-
-    print("cart: $cartProducts");
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home'),

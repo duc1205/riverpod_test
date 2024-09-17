@@ -5,15 +5,7 @@ import 'dart:convert';
 class SharedPreferencesHelper {
   static Future<void> saveProducts(List<Product> products) async {
     final prefs = await SharedPreferences.getInstance();
-    List<Product> existingProducts = await getProducts();
-
-    for (var product in products) {
-      if (!existingProducts.any((p) => p.id == product.id)) {
-        existingProducts.add(product);
-      }
-    }
-
-    final jsonString = json.encode(existingProducts.map((e) => e.toJson()).toList());
+    final jsonString = json.encode(products.map((e) => e.toJson()).toList());
     await prefs.setString('products', jsonString);
   }
 

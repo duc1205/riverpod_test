@@ -20,7 +20,7 @@ final cardTotalProvider = AutoDisposeProvider<int>.internal(
 );
 
 typedef CardTotalRef = AutoDisposeProviderRef<int>;
-String _$cartNotifierHash() => r'1b6e8f63e5cef534b0cd79eddda72ff71d4ccea5';
+String _$cartNotifierHash() => r'55377236dc33d8a2b40a1dbc4dc223114921f676';
 
 /// See also [CartNotifier].
 @ProviderFor(CartNotifier)
