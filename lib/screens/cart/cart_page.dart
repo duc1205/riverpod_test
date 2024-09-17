@@ -12,7 +12,7 @@ class CartPage extends ConsumerStatefulWidget {
 class _CartPageState extends ConsumerState<CartPage> {
   @override
   Widget build(BuildContext context) {
-    final cartProducts = ref.watch(cartNotifierProvider);
+    final cartProducts = ref.watch(cartNotifierProvider).value ?? [];
     final total = ref.watch(cardTotalProvider);
 
     return Scaffold(
@@ -42,7 +42,7 @@ class _CartPageState extends ConsumerState<CartPage> {
                 },
               ).toList(),
             ),
-            Text("Total : £$total}")
+            Text("Total : £$total")
           ],
         ),
       ),

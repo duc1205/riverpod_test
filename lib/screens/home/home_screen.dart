@@ -15,7 +15,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final allProducts = ref.watch(productsProvider);
-    final cartProducts = ref.watch(cartNotifierProvider);
+    final cartProducts = ref.watch(cartNotifierProvider).value ?? [];
 
     print("all:  $allProducts");
 
@@ -50,14 +50,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   if (cartProducts.contains(allProducts[index]))
                     TextButton(
                       onPressed: () {
-                        ref.watch(cartNotifierProvider.notifier).removeProduct(allProducts[index]);
+                        ref.read(cartNotifierProvider.notifier).removeProduct(allProducts[index]);
                       },
                       child: const Text('Remove'),
                     ),
                   if (!cartProducts.contains(allProducts[index]))
                     TextButton(
                       onPressed: () {
-                        ref.watch(cartNotifierProvider.notifier).addProduct(allProducts[index]);
+                        ref.read(cartNotifierProvider.notifier).addProduct(allProducts[index]);
                       },
                       child: const Text('Add to Cart'),
                     ),

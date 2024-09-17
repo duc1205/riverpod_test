@@ -5,7 +5,6 @@ import 'dart:convert';
 class SharedPreferencesHelper {
   static Future<void> saveProducts(List<Product> products) async {
     final prefs = await SharedPreferences.getInstance();
-    prefs.remove("products");
     List<Product> existingProducts = await getProducts();
 
     for (var product in products) {
