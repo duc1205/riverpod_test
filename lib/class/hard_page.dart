@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_example/class/riverpod.dart';
+// import 'package:riverpod_example/class/riverpod.dart';
+import 'package:riverpod_example/class/riverpod_model.dart';
 
 class HardPage extends ConsumerWidget {
   const HardPage({super.key});
@@ -17,7 +18,8 @@ class HardPage extends ConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              ref.watch(riverpodHardLevel).counter.toString(),
+              // ref.watch(riverpodHardLevel).counter.toString(),
+              ref.watch(riverpodModelNotifierProvider).toString(),
               style: const TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
@@ -25,14 +27,16 @@ class HardPage extends ConsumerWidget {
             ),
             ElevatedButton.icon(
               onPressed: () {
-                ref.read(riverpodHardLevel).increment();
+                // ref.read(riverpodHardLevel).increment();
+                ref.read(riverpodModelNotifierProvider.notifier).increment();
               },
               label: const Text('Add'),
               icon: const Icon(Icons.add),
             ),
             ElevatedButton.icon(
               onPressed: () {
-                ref.read(riverpodHardLevel).decrement();
+                // ref.read(riverpodHardLevel).decrement();
+                ref.read(riverpodModelNotifierProvider.notifier).decrement();
               },
               label: const Text('Remove'),
               icon: const Icon(Icons.remove),

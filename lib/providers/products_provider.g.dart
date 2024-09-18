@@ -6,11 +6,11 @@ part of 'products_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$productsHash() => r'48c888b003496256deeeaee20811324bf5f8ab85';
+String _$productsHash() => r'd25c68c24077cde5ad2b90c492a188054a11c8bd';
 
 /// See also [products].
 @ProviderFor(products)
-final productsProvider = AutoDisposeProvider<List<Product>>.internal(
+final productsProvider = AutoDisposeProvider<List<Products>>.internal(
   products,
   name: r'productsProvider',
   debugGetCreateSourceHash:
@@ -19,12 +19,12 @@ final productsProvider = AutoDisposeProvider<List<Product>>.internal(
   allTransitiveDependencies: null,
 );
 
-typedef ProductsRef = AutoDisposeProviderRef<List<Product>>;
-String _$reduceProductsHash() => r'7fbb4b569b04782e346d27c2ceb6db6cf7dfca0e';
+typedef ProductsRef = AutoDisposeProviderRef<List<Products>>;
+String _$reduceProductsHash() => r'cc82ec960d7bd36279db6dd518c74f1a84c87025';
 
 /// See also [reduceProducts].
 @ProviderFor(reduceProducts)
-final reduceProductsProvider = AutoDisposeProvider<List<Product>>.internal(
+final reduceProductsProvider = AutoDisposeProvider<List<Products>>.internal(
   reduceProducts,
   name: r'reduceProductsProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -34,6 +34,6 @@ final reduceProductsProvider = AutoDisposeProvider<List<Product>>.internal(
   allTransitiveDependencies: null,
 );
 
-typedef ReduceProductsRef = AutoDisposeProviderRef<List<Product>>;
+typedef ReduceProductsRef = AutoDisposeProviderRef<List<Products>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

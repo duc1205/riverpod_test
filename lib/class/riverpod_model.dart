@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+part 'riverpod_model.g.dart';
 
 class RiverpodModel extends ChangeNotifier {
   int counter;
@@ -16,4 +19,14 @@ class RiverpodModel extends ChangeNotifier {
     counter--;
     notifyListeners();
   }
+}
+
+@riverpod
+class RiverpodModelNotifier extends _$RiverpodModelNotifier {
+  @override
+  int build() => 0;
+
+  void increment() => state++;
+
+  void decrement() => state--;
 }
